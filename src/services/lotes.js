@@ -1,7 +1,9 @@
 import { supabase } from '../lib/supabase'
 
 export async function getAllLotes () {
-  const { data, error } = await supabase.from('lote').select('id_lote,titulo,precio,manzano(id_manzano,titulo),coordenadas(latitud,longitud)').order('id_lote', { ascending: true })
+  const { data, error } = await supabase.from('lote')
+    .select('id_lote,titulo,precio,manzano(id_manzano,titulo),coordenadas(latitud,longitud),reserva(id_reserva,monto,reserva_estado!inner(*))')
+    .order('id_lote', { ascending: true })
 
   if (error) {
     throw error
@@ -11,7 +13,9 @@ export async function getAllLotes () {
 }
 
 export async function getLoteById (id) {
-  const { data } = await supabase.from('lote').select('id_lote,titulo,precio,manzano(id_manzano,titulo),coordenadas(latitud,longitud)').eq('id_lote', id)
+  const { data } = await supabase.from('lote')
+    .select('id_lote,titulo,precio,manzano(id_manzano,titulo),coordenadas(latitud,longitud),reserva(id_reserva,monto,persona(id_persona,ci,nombres,apellidos),reserva_estado!inner(*))')
+    .eq('id_lote', id)
 
   return data.length > 0 ? data[0] : undefined
 }
