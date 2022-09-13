@@ -5,6 +5,7 @@ import Lotes from './pages/Lotes'
 import Reservas from './pages/Reservas'
 import ReservasForm from './pages/ReservasForm'
 import Ventas from './pages/Ventas'
+import VentasForm from './pages/VentasForm'
 
 export default function App () {
   return (
@@ -15,6 +16,7 @@ export default function App () {
         <Route path='/lotes/edit/:id' element={<LoteForm />} />
         <Route path='/lotes/new' element={<LoteForm />} />
         <Route path='/ventas' element={<Ventas />} />
+        <Route path='/ventas/:id_lote' element={<VentasForm />} />
         <Route path='/reservas' element={<Reservas />} />
         <Route path='/reservas/:id_lote' element={<ReservasForm />} />
         <Route path='/' element={<Navigate to='/lotes' />} />
