@@ -16,8 +16,8 @@ export default function MainLayout ({ children }) {
   return (
     <div>
       <nav className='flex justify-between items-center h-14 border-b px-10'>
-        <div className='w-11 h-11 rounded-full bg-gray-300 flex items-center justify-center'>
-          B
+        <div className='flex items-center justify-center text-2xl font-bold'>
+          Sacaguazu
         </div>
         <div className='flex items-center gap-2 divide-x divide-gray-300 divide-dashed'>
           <CustomNavLink to='/lotes'>Lotes</CustomNavLink>
