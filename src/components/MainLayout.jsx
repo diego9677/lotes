@@ -21,8 +21,8 @@ export default function MainLayout ({ children }) {
         </div>
         <div className='flex items-center gap-2 divide-x divide-gray-300 divide-dashed'>
           <CustomNavLink to='/lotes'>Lotes</CustomNavLink>
-          <CustomNavLink to='/ventas'>Ventas</CustomNavLink>
           <CustomNavLink to='/reservas'>Reservas</CustomNavLink>
+          <CustomNavLink to='/ventas'>Ventas</CustomNavLink>
         </div>
       </nav>
       <div className='px-10'>

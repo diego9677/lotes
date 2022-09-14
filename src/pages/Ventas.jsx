@@ -32,6 +32,7 @@ export default function Ventas () {
 
   return (
     <div className='flex flex-col py-5 gap-4'>
+      <h5 className='text-xl text-gray-800 font-semibold mb-3'>Ventas</h5>
       <div className='flex items-center justify-end'>
         {/* <Link to='/lotes/new' className='p-2 bg-blue-600 text-white rounded-md outline-none hover:bg-opacity-80'>
           <i className='las la-plus la-lg' />

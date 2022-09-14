@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Select from '../components/Select'
 import { getLoteById } from '../services/lotes'
 import { getAllTasa, getAllTipoPago } from '../services/ventas'
@@ -71,6 +71,7 @@ export default function VentasForm () {
 
   return (
     <div className='flex flex-col items-center h-screen py-5'>
+      <h5 className='text-xl text-gray-800 font-semibold mb-3'>Registrar Venta</h5>
       <div className='w-3/4 border border-gray-300 rounded-md p-2 flex items-center my-5'>
         <div className='flex-1 flex flex-col'>
           <p className='text-sm font-light text-gray-500'>{lote.id_lote}</p>
@@ -114,6 +115,7 @@ export default function VentasForm () {
         </button>
       </div>
       <div className='w-3/4 flex flex-col my-5 h-[400px] overflow-auto'>
+        <h5 className='text-xl text-gray-800 font-semibold mb-3'>Plan de pago</h5>
         <table className='min-w-max w-full table-auto'>
           <thead>
             <tr className='bg-gray-200 text-gray-600 uppercase text-sm leading-normal'>
@@ -139,7 +141,10 @@ export default function VentasForm () {
           </tbody>
         </table>
       </div>
-      <div className='w-3/4 flex justify-end'>
+      <div className='w-3/4 flex justify-end gap-2'>
+        <Link className='p-2 rounded-md outline-none text-white bg-red-600 text-sm font-semibold flex items-center justify-center h-10 w-20' to='/ventas'>
+          Cancelar
+        </Link>
         <button type='button' className='p-2 rounded-md outline-none text-white bg-blue-600 text-sm font-semibold flex items-center justify-center h-10 w-20' onClick={generatePlanPago}>
           Guardar
         </button>
